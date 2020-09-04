@@ -1,0 +1,147 @@
+﻿@model IEnumerable<ReservationVol5.Models.Calendrier>
+
+@{
+    ViewBag.Title = "SearchResults";
+}
+
+<h2>resultats de Recherche</h2>
+
+<br />
+<div class="alert-danger">@ViewBag.ScheduleMessage</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<h4 style="color: red">Source : @ViewBag.Source ||||||| Destination: @ViewBag.Dest </h4>
+<br />
+<table class="table table-bordered table-striped">
+    <tr>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.vol.nomVol)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.calendrierDate)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.tempsdepart)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.datearrivee)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.tempsarrivee)
+        </th>
+
+        <th class="alert-info">
+            (First class) Siege Disponible | Prix(Dh)
+        </th>
+        <th class="alert-info">
+            (Business class) Siege Disponible | Prix(Dh)
+        </th>
+        <th class="alert-info">
+            (Economy class) Siege Disponible| Prix(Dh)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <th class="alert-link">
+        @Html.DisplayFor(model => item.vol.nomVol)
+    </th>
+    <th>
+        @Html.DisplayFor(model => item.calendrierDate)
+    </th>
+    <th>
+        @Html.DisplayFor(model =>item.tempsdepart)
+    </th>
+    <th>
+        @Html.DisplayFor(model => item.datearrivee)
+    </th>
+    <th>
+        @Html.DisplayFor(model => item.tempsarrivee)
+    </th>
+    <td>
+        @Html.DisplayFor(modelItem => item.siegepremiereClassrestant) |
+        @Html.DisplayFor(modelItem => item.siegeBuisnissClassrestant) |
+        @if (!item.calendrierDate.ToShortDateString().Contains(DateTime.Today.ToShortDateString()))
+        {
+            if (item.siegepremiereClassrestant > 0)
+            {
+                using (Html.BeginForm("Reserver", "Clients", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("sid", item.calendrierId)
+                     @Html.Hidden("fid", item.volId)
+                    @Html.Hidden("doj", item.calendrierDate)
+                     @Html.Hidden("name", item.vol.nomVol)
+                    @Html.Hidden("Tclass", "First")
+                    <input type="submit" value="Reserver" class="btn-warning" />
+                }
+
+            }
+        }
+        else
+        {
+            <div>impossible de reserver!!</div>
+        }
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.siegeBuisnissClassrestant) |
+        @Html.DisplayFor(modelItem => item.prixBuisniss) |
+        @if (!item.calendrierDate.ToShortDateString().Contains(DateTime.Today.ToShortDateString()))
+        {
+            if (item.siegeBuisnissClassrestant > 0)
+            {
+                using (Html.BeginForm("Reserver", "Clients", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("sid", item.calendrierId)
+                    @Html.Hidden("fid", item.volId)
+                    @Html.Hidden("doj", item.calendrierDate)
+                    @Html.Hidden("name", item.vol.nomVol)
+                    @Html.Hidden("Tclass", "Business")
+                    <input type="submit" value="Reserver" class="btn-warning" />
+                }
+
+            }
+        }
+        else
+        {
+            <div>impoosible de reserver!!</div>
+        }
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.siegeeconomieClassrestant) |
+        @Html.DisplayFor(modelItem => item.prixeconomie) |
+        @if (!item.calendrierDate.ToShortDateString().Contains(DateTime.Today.ToShortDateString()))
+        {
+            if (item.siegeeconomieClassrestant > 0)
+            {
+                using (Html.BeginForm("Reserver", "Clients", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                       @Html.Hidden("sid", item.calendrierId)
+                     @Html.Hidden("fid", item.volId)
+                    @Html.Hidden("doj", item.calendrierDate)
+                    @Html.Hidden("name", item.vol.nomVol)
+                    @Html.Hidden("Tclass", "Economy")
+                    <input type="submit" value="Reserver" class="btn-warning" />
+                }
+
+            }
+        }
+        else
+        {
+            <div>impossible de reserver!!</div>
+        }
+    </td>
+</tr>
+    }
+
+</table>
+

@@ -1,0 +1,98 @@
+﻿@model ReservationVol5.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Calendrier.source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calendrier.source)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vol.nomVol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vol.nomVol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datevol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datevol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numerosiege)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numerosiege)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomclient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomclient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prenomclient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prenomclient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emaiclient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emaiclient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numeroTelephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeroTelephone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.typeclasse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.typeclasse)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClientId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

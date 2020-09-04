@@ -1,0 +1,50 @@
+﻿@model ReservationVol5.Models.Vol
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Vol</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomVol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomVol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siegePremiereClasse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siegePremiereClasse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siegeBusinessclass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siegeBusinessclass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siegeEconomyclass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siegeEconomyclass)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.VolId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

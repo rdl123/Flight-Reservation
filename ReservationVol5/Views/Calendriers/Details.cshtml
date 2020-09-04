@@ -1,0 +1,122 @@
+﻿@model ReservationVol5.Models.Calendrier
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Calendrier</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.vol.nomVol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vol.nomVol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.destinationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.destinationId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.calendrierDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.calendrierDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tempsdepart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tempsdepart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datearrivee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datearrivee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tempsarrivee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tempsarrivee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siegepremiereClassrestant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siegepremiereClassrestant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siegeBuisnissClassrestant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siegeBuisnissClassrestant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siegeeconomieClassrestant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siegeeconomieClassrestant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prixpremiere)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prixpremiere)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prixBuisniss)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prixBuisniss)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prixeconomie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prixeconomie)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.calendrierId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

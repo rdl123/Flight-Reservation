@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ReservationVol5.Models.Vol>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table table-bordered table-hover table-striped">
+    <tr>
+        <th class="alert-danger">
+            @Html.DisplayNameFor(model => model.nomVol)
+        </th>
+        <th class="alert-danger">
+            @Html.DisplayNameFor(model => model.siegePremiereClasse)
+        </th>
+        <th class="alert-danger">
+            @Html.DisplayNameFor(model => model.siegeBusinessclass)
+        </th>
+        <th class="alert-danger">
+            @Html.DisplayNameFor(model => model.siegeEconomyclass)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="warning" >
+            @Html.DisplayFor(modelItem => item.nomVol)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.siegePremiereClasse)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.siegeBusinessclass)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.siegeEconomyclass)
+        </td>
+        <td class="warning">
+            @Html.ActionLink("Edit", "Edit", new { id=item.VolId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VolId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VolId })
+        </td>
+    </tr>
+}
+
+</table>

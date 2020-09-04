@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ReservationVol5.Models.Client>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table table-bordered table-hover table-striped">
+    <tr >
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.Calendrier.source)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.Vol.nomVol)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.datevol)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.numerosiege)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.nomclient)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.prenomclient)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.emaiclient)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.numeroTelephone)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.addresse)
+        </th>
+        <th class="alert-info">
+            @Html.DisplayNameFor(model => model.typeclasse)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.Calendrier.source)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.Vol.nomVol)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.datevol)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.numerosiege)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.nomclient)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.prenomclient)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.emaiclient)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.numeroTelephone)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.addresse)
+        </td>
+        <td class="warning">
+            @Html.DisplayFor(modelItem => item.typeclasse)
+        </td>
+        <td class="warning">
+            @Html.ActionLink("Edit", "Edit", new { id=item.ClientId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ClientId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ClientId })
+        </td>
+    </tr>
+}
+
+</table>

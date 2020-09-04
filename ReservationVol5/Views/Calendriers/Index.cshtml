@@ -1,0 +1,111 @@
+﻿@model IEnumerable<ReservationVol5.Models.Calendrier>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-striped" >
+    <tr class="alert-success">
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.vol.nomVol)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.source)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.destination)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.destinationId)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.calendrierDate)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.tempsdepart)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.datearrivee)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.tempsarrivee)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.siegepremiereClassrestant)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.siegeBuisnissClassrestant)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.siegeeconomieClassrestant)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.prixpremiere)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.prixBuisniss)
+        </th>
+        <th class="alert-success">
+            @Html.DisplayNameFor(model => model.prixeconomie)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.vol.nomVol)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.source)
+    </td >
+    <td class="info"  >
+        @Html.DisplayFor(modelItem => item.destination)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.destinationId)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.calendrierDate)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.tempsdepart)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.datearrivee)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.tempsarrivee)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.siegepremiereClassrestant)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.siegeBuisnissClassrestant)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.siegeeconomieClassrestant)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.prixpremiere)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.prixBuisniss)
+    </td>
+    <td class="info" >
+        @Html.DisplayFor(modelItem => item.prixeconomie)
+    </td>
+    <td class="info" >
+        @Html.ActionLink("Edit", "Edit", new { id = item.calendrierId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.calendrierId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.calendrierId })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,49 @@
+﻿@model  ReservationVol5.Models.Calendrier
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h4 style="font-size:40px">Rechercher votre Vol:</h4>
+        <br />
+        @using (Html.BeginForm("SearchResults", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            <fieldset class="center-block">
+                <div class="form-group">
+                    <label class="col-md-10">Source: </label>
+                    <div class="col-md-18">
+                        @Html.DropDownList("source", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.source, "", new { @class = "text-danger" })
+                        <br />
+                    </div>
+                </div>
+
+                <div class="form-group active">
+                    <label class="col-md-10">Destination: </label>
+                    <div class="col-md-18">
+                        @Html.DropDownList("dest", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.destination, "", new { @class = "text-danger" })
+                        <br />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-10">Date Du Vol: </label>
+                    <div class="col-md-18">
+                        <input type="date" name="dateOfJourney" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.calendrierDate, "")
+                        <br />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-18">
+                        <input type="submit" class="btn col-lg-10  btn-primary" value="submit" />
+                    </div>
+                </div>
+            </fieldset>
+        }
+
+    </div>
+
+</div>

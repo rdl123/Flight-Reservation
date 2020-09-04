@@ -1,0 +1,100 @@
+﻿@model ReservationVol5.Models.Client
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Reservation</h2>
+
+View
+@using (Html.BeginForm("Payment", "Clients", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Billet D`avion</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="control-label col-md-3" style="font-size:18px">
+        <div class="form-group">
+
+            Compagnie Aerrienne :@ViewBag.nomVol
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Hidden("volId", Model.volId)
+    </div>
+
+    <div class="form-group">
+        @Html.Hidden("calendrierId", Model.calendrierId)
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-3" style="font-size:18px">
+            Date du Vol : @Model.datevol.ToShortDateString()
+            @Html.Hidden("dateOfJourney", Model.datevol)
+        </div>
+        <div class="col-md-10">
+            <div class="form-group">
+                @Html.LabelFor(model => model.typeclasse, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.Hidden("travelclass", Model.typeclasse)
+                    @Model.typeclasse
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.nomclient, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.nomclient, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.nomclient, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.sexe, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <select name="gender" class="form-control">
+                        <option value="F">F</option>
+                        <option value="M">M</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.numeroTelephone, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.numeroTelephone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.numeroTelephone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.addresse, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.addresse, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.addresse, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Proceed to payment" class="btn btn-info" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

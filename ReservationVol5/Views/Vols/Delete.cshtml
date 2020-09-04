@@ -1,0 +1,56 @@
+﻿@model ReservationVol5.Models.Vol
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Vol</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomVol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomVol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siegePremiereClasse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siegePremiereClasse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siegeBusinessclass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siegeBusinessclass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.siegeEconomyclass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.siegeEconomyclass)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
